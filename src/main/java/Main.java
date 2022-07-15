@@ -42,7 +42,6 @@ public class Main {
             //Create brand new list
             List newPersonList = new ArrayList<>();
 
-
             initializeThreeOptionsMenu(newPersonList);
 
         } else if (inputFromUser.equalsIgnoreCase("X")) {
@@ -82,7 +81,7 @@ public class Main {
     private static void printPeople() throws IOException {
         //Print everyone in the persons list
         personList.forEach(person-> {
-            System.out.println("Person: " + person);
+            System.out.println("Person: " + person.getName());
         });
 
         //Return the user to the 3 options from before.
@@ -112,7 +111,7 @@ public class Main {
         FileWriter fileWriter = null;
 
         try {
-            fileWriter = new FileWriter(fileName);
+            fileWriter = new FileWriter(fileName, true);
             stringBuffer.append(text);
             fileWriter.write(stringBuffer.toString() + "\n");
         } catch (IOException ioException) {
